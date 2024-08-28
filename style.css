@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+h1 {
+    color: #fff;
+}
+
+
+.nav {
+
+    background: #000;
+}
+
+.nav img {
+    height: 100px;
+}
+
+.main {
+    height: 86.8vh;
+    position: relative;
+    width: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .image-container {
+    padding: 10px;
+}
+
+.main .image-container .image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .image-container .image img {
+    width: 350px;
+    align-items: center;
+}
+
+.main .image-container h1 {
+    color: #00bcd4;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.main .image-container p {
+    color: #324042;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main .input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 50px;
+    border-radius: 20px;
+    background: rgb(202 253 255 / 50%);
+}
+
+
+
+.main .input .talk {
+    gap: 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.main .input .talk i {
+    font-size: 20px;
+    color: #aed0d0;
+}
+
+.main .input .content {
+    color: #aed0d0;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+
+
+
+
+/* Menu */
+/* Menu Button */
+.toggle-menu {
+    position: fixed;
+    /* Use fixed to keep it in view */
+    top: 10px;
+    right: 15px;
+    z-index: 99;
+    color: #000;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 24px;
+    /* Increased size for better visibility */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    /* Smooth color transition */
+}
+
+.toggle-menu:hover {
+    color: #3e4040;
+    /* Highlight color on hover */
+}
+
+/* Menu */
+.menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(186, 186, 186, 0.9);
+    padding: 80px 60px;
+    clip-path: circle(7% at right top);
+    transition: all 0.5s ease;
+    z-index: 98;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.menu li {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.menu a {
+    font-family: 'Poppins', sans-serif !important;
+    display: block;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    visibility: hidden;
+    opacity: 0;
+    padding: 10px 0;
+    font-size: 22px;
+    transition: all 0.5s ease;
+}
+
+.menu.visible a {
+    visibility: visible;
+    opacity: 1;
+    font-size: 5vw;
+}
+
+.menu.visible {
+    clip-path: circle(100%);
+
+}
+
+.udline {
+    position: relative;
+}
+
+.udline::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+.udline:hover::before {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+
+@media screen and (max-width:576px) {
+    .main .image-container h1 {
+        font-size: 27px !important;
+    }
+
+    .main .image-container .image img {
+        width: 300px;
+    }
+
+    .menu {
+        clip-path: circle(13% at right top);
+    }
+
+    .main .input {
+        width: 80vw !important;
+        margin-bottom: 50px;
+    }
+
+    .main {
+        height: 85.3vh !important;
+    }
+
+    .input {
+        margin-bottom: 50px;
+    }
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.talk {
+    display: flex;
+    align-items: center;
+    /* background-color: #007bff; */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.talk:hover {
+    transform: scale(1.05);
+}
+
+.talk i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.talk:hover i {
+    color: #e0e0e0;
+}
+
+.talk .content {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: textPulse 1.5s infinite;
+}
+
+@keyframes textPulse {
+    0% {
+        color: #fff;
+        transform: scale(1);
+    }
+    50% {
+        color: #d1d1d1;
+        transform: scale(1.05);
+    }
+    100% {
+        color: #fff;
+        transform: scale(1);
+    }
+}
