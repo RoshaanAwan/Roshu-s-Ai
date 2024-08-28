@@ -84,7 +84,7 @@ function takeCommand(message) {
     speak("Opening Google...");
   } else if (message.includes("tell me about my friends")) {
     speak(
-      "Chuityaan hain saary. Or my friend yahya have big hips and tits and sameer have small dick and usman have nothing"
+      "Chutiyaan hainn saarry. Or my friend yahya have big hips and tits and sameer have small dick and usman have nothing"
     );
   } else if (
     message.includes("how are you?") ||
